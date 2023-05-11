@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assessment2</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+    <!-- start container -->
+    <div class="container">
+        <!-- start status-add-block -->
+        <div class="status-add-block">
+            <!-- status-btn -->
+            <button class="pointer" type="button" id="filterStatusBtn"><i
+                    class="fa-solid fa-filter status-filter-icon"></i><span class="status-text">Status</span></button>
+            <button class="pointer" type="button" id="addBtn"><i class="fa-solid fa-plus add-btn-icon"></i>
+                <span class="add-btn-text">Add customer</span></button>
+        </div>
+        <!-- end status-add-block -->
+        <!-- start form -->
+        <form id="form">
+            <div class="form-input-block">
+                <!-- start name block -->
+                <div class="name-block input-block">
+                    <label for="name">NAME<sup>*</sup></label>
+                    <input type="text" placeholder="Enter Name" id="name" autocomplete="off">
+                    <p class="error" id="nameError"></p>
+                </div>
+                <!-- start description block -->
+                <div class="description-block input-block">
+                    <label for="description">DESCRIPTION<sup>*</sup></label>
+                    <input type="text" placeholder="Enter Description" id="description" autocomplete="off">
+                    <p class="error" id="descriptionError"></p>
+                </div>
+                <!-- start status block -->
+                <div class="status-block input-block">
+                    <label for="status">STATUS<sup>*</sup></label>
+                    <select name="status" id="status">
+                        <option selected disabled value="Select Status">Select Status</option>
+                        <option value="Open">Open</option>
+                        <option value="Error">Error</option>
+                        <option value="Success">Success</option>
+                    </select>
+                    <p class="error" id="statusError"></p>
+                </div>
+            </div>
+
+            <div class="form-input-block">
+                <!-- start rate block -->
+                <div class="rate-block input-block">
+                    <label for="rate">RATE<sup>*</sup></label>
+                    <input type="number" placeholder="Enter Rate" id="rate" autocomplete="off">
+                    <p class="error" id="rateError"></p>
+                </div>
+                <!-- start balance block -->
+                <div class="balance-block input-block">
+                    <label for="balance">BALANCE<sup>*</sup></label>
+                    <input type="number" placeholder="Enter Balance" id="balance" autocomplete="off">
+                    <p class="error" id="balanceError"></p>
+                </div>
+                <!-- start deposit block -->
+                <div class="deposit-block input-block">
+                    <label for="deposit">DEPOSIT<sup>*</sup></label>
+                    <input type="number" placeholder="Enter Deposit" id="deposit" autocomplete="off">
+                    <p class="error" id="depositError"></p>
+                </div>
+            </div>
+
+        </form>
+        <!-- end form -->
+
+        <!--start cancel and save btn block-->
+        <div class="save-cancel-btn-block">
+            <!-- cancel-btn -->
+            <button class="pointer" type="button" id="cancel"><span class="add-btn-text">Cancel</span></button>
+            <!-- save-btn -->
+            <button class="pointer" type="button" id="save" disabled><span
+                    class="status-text" >Save</span></button>
+        </div>
+        <!--start cancle and save btn block-->
+
+        <!-- start table block -->
+        <div class="table-block">
+            <table id="table"></table>
+        </div>
+        <!-- end table block -->
+        <!--start no data block -->
+        <div class="no-data-block">
+            <span class="no-data-text">No Data</span>
+        </div>
+        <!--end no data block -->
+
+    </div>
+    <!-- end container -->
+    <script src="script.js">
+    </script>
+</body>
+
+</html>

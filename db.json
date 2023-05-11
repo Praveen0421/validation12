@@ -1,0 +1,22 @@
+{
+  "customer": [
+    {
+      "name": "praveen",
+      "description": "hello",
+      "status": "Success",
+      "rate": "70.00",
+      "balance": -70,
+      "deposit": "5000",
+      "id": 1
+    },
+    {
+      "name": "manish",
+      "description": "reach person of world",
+      "status": "Success",
+      "rate": "80.00",
+      "balance": 7000000000,
+      "deposit": "50000000",
+      "id": 2
+    }
+  ]
+}

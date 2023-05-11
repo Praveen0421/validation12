@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Enable Submit Button on Valid Input (with Regex)</title>
+</head>
+
+<body>
+  <form>
+    <input type="text" id="input1" required pattern="^[A-Z]$" title="Please enter alphabetic characters only">
+    <input type="text" id="input2" required pattern="[0-9]+$" minlength="8" title="Please enter a 5-digit number">
+    <div id="error">min length 8</div>
+    <input type="text" id="input3" required pattern="[0-9]+$" title="Please enter a valid email address">
+    <button type="submit" id="submitBtn" disabled>Submit</button>
+  </form>
+
+  <script>
+    // Get references to the input fields and the submit button
+    const input1 = document.getElementById('input1');
+    const input2 = document.getElementById('input2');
+    const input3 = document.getElementById('input3');
+    const submitBtn = document.getElementById('submitBtn');
+    const error = document.querySelector('#error');
+    error.style.display = 'none'
+    console.log(input1.value);
+    // Add event listeners to the input fields
+    input1.addEventListener('blur', validateInputs1);
+    input2.addEventListener('blur', validateInputs2);
+    input3.addEventListener('blur', validateInputs3);
+    let input3Valid = false;
+    let input2Valid = false;
+    let input1Valid = false
+
+    function validateInputs1() {
+      input1Valid = input1.value.match(input1.pattern);
+      if (input1.value === "") {
+        console.log('plz fill the value');
+        input1Valid = false;
+      }
+      else if (input1Valid === null) {
+        console.log('plz enter correct value');
+        input1Valid = false;
+      }
+
+      else {
+        console.log('you have enter the correct value');
+        input1Valid = true;
+      }
+      submitBtn.disabled = !(input1Valid && input2Valid && input3Valid);
+    }
+    function validateInputs2() {
+      input2Valid = input2.value.match(input2.pattern)
+      if (input2.value === "") {
+        console.log('plz fill the value');
+        input2Valid = false;
+      }
+      else if (input2Valid === null) {
+        console.log('plz enter correct value');
+        input2Valid = false;
+      }
+      else {
+        console.log('you have enter the correct value');
+        input2Valid = true;
+      }
+      submitBtn.disabled = !(input1Valid && input2Valid && input3Valid);
+    }
+    function validateInputs3() {
+      input3Valid = input3.value.match(input3.pattern);
+      if (input3.value === "") {
+        console.log('plz fill the value');
+        input3Valid = false;
+      }
+      else if (input3Valid === null) {
+        console.log('plz enter correct value');
+        input3Valid = false;
+      }
+
+      else {
+        console.log('you have enter the correct value');
+        input3Valid = true;
+
+      }
+      submitBtn.disabled = !(input1Valid && input2Valid && input3Valid);
+    }
+
+
+
+    // Update the state of the submit button
+
+
+ 
+  </script>
+</body>
+
+</html>
